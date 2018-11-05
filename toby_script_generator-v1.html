@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Form 1 - test Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/toby_css1.css') }}">
+</head>
+ 
+<body>
+  <div class="form-style-5">
+<form method="post">
+
+
+  <fieldset>
+      <legend><span class="number">1</span> Global Details:</legend>
+      <label for="dut_handle"><span>DUT label:<span class="required">*</span></span><input type="text" class="input-field" name="dut_handle" value="{dh_r0}" > </label>
+      <label for="kw0"><span>KWs to run before Negative Trigger:</span><input type="text" class="input-field" name="kw0" value="check_initial_state">        </label>
+      <label for="kw1"><span>KWs to run After Negative Trigger:<span class="required">*</span></span><input type="text" class="input-field" name="kw1" value="check_core_functions_1"></label>
+      <label for="resource_files"><span>Resource Fiels to be included:<span class="required">*</span></span><input type="text" class="input-field" name="resource_files" value="38094_keywords1.robot, 38094_keywords2.robot" > </label>
+  </fieldset>
+
+  <fieldset>
+      <legend><span class="number">2</span> Select Protocols to Flap:</legend>
+      <label for="prot_flap_count"><span>Protocols Flap Count:<span class="optional">*</span></span> <input style="width:30%" type="text" name="prot_flap_count" value="3"> </label>
+      <input type="checkbox" name="ospf" value="yes"> OSPF
+      <input type="checkbox" name="isis" value="yes"> ISIS
+      <input type="checkbox" name="bgp" value="yes"> BGP
+      <input type="checkbox" name="mpls" value="yes"> MPLS <br><br>
+      <label for="other_protos"><span>Other Protocols:</span><input type="text" class="input-field" name="other_protos" value="source_packet_routing, Protocols2" />
+        </label>
+  </fieldset>
+
+  <fieldset>
+      <legend><span class="number">3</span> Select Deamons to Restart:</legend>
+      <input type="checkbox" name="rpd" value="yes"> RPD
+      <input type="checkbox" name="chassisd" value="yes"> CHASSISD
+      <input type="checkbox" name="nagrpc" value="yes"> na-grpc-server
+      <input type="checkbox" name="jsd" value="yes"> jsd
+      <input type="checkbox" name="xmlproxyd" value="yes"> xmlproxyd
+      <input type="checkbox" name="l2ald" value="yes"> L2ALD<br><br>
+      <input type="checkbox" name="fpc" value="yes"> FPC Slots:<input style="width:30%" type="text" name="fpc_slot" value="0,1"> 
+      <label for="other_deamons "><span>Other Deamons:</span><input style="width:50%" type="text" class="input-field" name="other_deamons" value="deamon1, deamon2" />
+        </label>
+  </fieldset>
+  
+  <fieldset>
+      <legend><span class="number">4</span> Link Flap:</legend>
+      <label for="links_flap_count"><span>Link Flap Count:<span class="optional">*</span></span> <input style="width:30%" type="text" name="links_flap_count" value="3"> </label>
+      
+      <label>
+      <input type="checkbox" name="links_to_flap" value="yes"> Links to Flap  <input type="text" name="links_to_flap" value="tv['r0__r0-r1-1__pic'], ae0">
+      </label>
+  </fieldset>    
+
+  <fieldset>
+      <legend><span class="number">5</span> High Availability Tests:</legend>
+      <input type="checkbox" name="gr" value="yes"> GR
+      <input type="checkbox" name="gres" value="yes"> GRES
+      <input type="checkbox" name="issu" value="yes"> ISSU
+  </fieldset>    
+
+
+  <br><br><br>
+  <legend style="color:indianred;font-size:12px;font:Arial">* Please click the "Submit" button to generate TOBY file.</legend>
+  <input type="submit" value="Submit">
+
+</form>
+</div>
+
+</body>
+ 
+
+</html>
